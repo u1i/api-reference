@@ -1,0 +1,15 @@
+cat README.md.template > README.md
+
+echo "## Instagram" >> README.md
+
+for d in Instagram/*pdf
+do
+	b=$(basename "$d")
+	echo $b
+	echo -e "[$b]($d)\n" >> README.md
+done
+# http://apiref.sotong.io/Instagram/
+
+git add -A
+git commit -m changed
+git push
